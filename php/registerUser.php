@@ -6,24 +6,32 @@ include "logActivity.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-	session_start();
-
+	// Get posted data
 	$username = $mysqli->real_escape_string($_POST["username"]);
-    $password = $mysqli->real_escape_string($_POST["password"]);
-    
-    $sql = ("INSERT INTO users (username, password) VALUES (?, ?)");
-	$stmt = $mysqli->prepare($sql);
-	$stmt->bind_param("ssd", $username, $password);
-	$stmt->execute();
-	$user_id = $stmt->insert_id;
-	$stmt->close();
+	$password = $mysqli->real_escape_string($_POST["password"]);
 	
-	$_SESSION["user_id"] = $user_id;
-	$_SESSION["username"] = $username;
-	$_SESSION["password"] = $password;
+	// Check if user exists
+	$result = $mysqli->query("SELECT * FROM users WHERE username='$username'");
+	if ($result->num_rows == 0) {
+
+		$stmt = $mysqli->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+		$stmt->bind_param("ss", $username, $password);
+		$stmt->execute();
+
+		logActivity($mysqli, $username, "Account registered");
+
+		session_start();
+		$_SESSION["username"] = $username;
+		$_SESSION["password"] = $password;
+
+	}
+	else {
+		// header("Location: login.html");
+		echo "Username already exists";
+	}
 	
-	logActivity($user_id, "Account registered");
+	
 }
 else {
-
+	echo "You can't just navigate to this page, we need data!";
 }
