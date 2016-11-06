@@ -21,6 +21,7 @@
 				<div class="main-body-content">
 					<h2 class="partay-img">Change Password</h2>
 					<form action="php/changeInfo.php" method="post">
+						<?php if(isset($_GET["cpError"])) echo "<div class='error-message'>".$_GET["cpError"]."</div>"; ?>
 						<input type="text" placeholder="New password" name="newPassword" />
 						<button type="submit">Submit</button>
 					</form>
@@ -42,6 +43,7 @@
 					<h2 class="magenta-img">Activity Log</h2>
 					<table>
 						<?php
+							// Display table of activity log data
 							$results = $mysqli->query("SELECT * FROM activity WHERE username='".$_SESSION["username"]."'") or die($mysqli->error);
 							while($result = $results->fetch_assoc()) {
 								echo "<tr><td>".$result["time"]."</td><td>".$result["activity_descr"]."</td></tr>";

@@ -12,4 +12,5 @@ define("USER", "root");
 define("PASSWORD", "");
 define("DATABASE", "ph289");*/
 
+// Create 'global' mysqli variable to database access
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE) or die("Failed to connect");
