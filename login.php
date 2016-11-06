@@ -20,7 +20,7 @@
 					<form action="php/validateLogin.php" method="post">
 						<?php if(isset($_GET["lError"])) echo "<div class='error-message'>".$_GET["lError"]."</div>"; ?>
 						<input type="text" placeholder="Username" name="username" />
-						<input type="text" placeholder="Password" name="password" />
+						<input type="password" placeholder="Password" name="password" />
 						<button type="submit">Submit</button>
 					</form>
 
@@ -28,7 +28,7 @@
 					<form action="php/registerUser.php" method="post">
 						<?php if(isset($_GET["rError"])) echo "<div class='error-message'>".$_GET["rError"]."</div>"; ?>
 						<input type="text" placeholder="Username" name="username" />
-						<input type="text" placeholder="Password" name="password" />
+						<input type="password" placeholder="Password" name="password" />
 						<button type="submit">Submit</button>
 					</form>
 				</div>

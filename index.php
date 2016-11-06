@@ -13,7 +13,7 @@
 			
 			<div class="main-body">
 				<div class="main-body-sidebar">
-					I am a sidebar and I can have lots of coolio content
+					Welcome to a website!
 				</div>
 				<div class="main-body-content">
 					<h2 class="partay-img">I am the most important lorem ipsum</h1>

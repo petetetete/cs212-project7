@@ -16,7 +16,7 @@
 
 			<div class="main-body">
 				<div class="main-body-sidebar">
-					I am also a sidebar but my content is less coolio
+					On this page you can view and edit some of your account settings
 				</div>
 				<div class="main-body-content">
 					<h2 class="partay-img">Change Password</h2>
@@ -32,7 +32,7 @@
 						<button type="submit">Submit</button>
 					</form>
 
-					<h2 class="blue-img">Archive Activity Log</h2>
+					<h2 class="partay-img">Archive Activity Log</h2>
 					<form action="php/archiveActivity.php" method="post">
 						<?php if(isset($_GET["aaError"])) echo "<div class='error-message'>".$_GET["aaError"]."</div>"; ?>
 						<input type="text" placeholder="Confirm username" name="username" />

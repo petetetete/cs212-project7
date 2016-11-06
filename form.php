@@ -142,7 +142,7 @@
 
 			<div class="main-body">
 				<div class="main-body-sidebar">
-					This sidebar is the least useful
+					I am an example form page!
 				</div>
 				<div class="main-body-content">
 					<h2 class="partay-img">Form</h2>
