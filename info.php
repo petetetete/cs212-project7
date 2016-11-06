@@ -6,10 +6,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<?php include "partials/head.html" ?>
 		<title>Info - CS212</title>
 	</head>
 	<body>
@@ -30,12 +27,14 @@
 
 					<h2 class="blue-img">Delete Account</h2>
 					<form action="php/deleteAccount.php" method="post">
+						<?php if(isset($_GET["daError"])) echo "<div class='error-message'>".$_GET["daError"]."</div>"; ?>
 						<input type="text" placeholder="Confirm username" name="username" />
 						<button type="submit">Submit</button>
 					</form>
 
 					<h2 class="blue-img">Archive Activity Log</h2>
 					<form action="php/archiveActivity.php" method="post">
+						<?php if(isset($_GET["aaError"])) echo "<div class='error-message'>".$_GET["aaError"]."</div>"; ?>
 						<input type="text" placeholder="Confirm username" name="username" />
 						<button type="submit">Submit</button>
 					</form>

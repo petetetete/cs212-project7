@@ -13,10 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		logActivity($mysqli, $_POST["username"], "User deleted");
 
 		session_destroy();
-		header("Location: ../login.html");
+		header("Location: ../login.php");
 	}
 	else {
-		echo "Username does not match.";
+		$errorMessage = "Username does not match";
+		header("Location: ../info.php?daError=$errorMessage");
 	}
 }
 else {

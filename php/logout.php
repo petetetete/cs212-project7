@@ -10,5 +10,5 @@ if (isset($_SESSION["username"])) {
 	logActivity($mysqli, $_SESSION["username"], "User logout");
 
 	session_destroy();
-	header("Location: ../login.html");
+	header("Location: ../login.php");
 }

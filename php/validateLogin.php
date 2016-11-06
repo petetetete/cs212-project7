@@ -26,7 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 	else {
 		logActivity($mysqli, "ADMIN", "Invalid login attempt: (U: ".$username.", P: ".$password.")");
-		echo "Invalid login";
+
+		$errorMessage = "Invalid login";
+		header("Location: ../login.php?lError=$errorMessage");
 	}
 }
 else {

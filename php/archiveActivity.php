@@ -21,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		header("Location: ../info.php");
 	}
 	else {
-		echo "Username does not match.";
+		$errorMessage = "Username does not match";
+		header("Location: ../info.php?aaError=$errorMessage");
 	}
 }
 else {
