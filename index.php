@@ -1,3 +1,5 @@
+<?php include "php/bounceCheck.php" ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,15 +11,9 @@
 	</head>
 	<body>
 		<div class="main-container">
-			<div class="main-header material">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="electricboogaloo.html">Info</a></li>
-					<li><a href="form.php">Form</a></li>
-					<li><a href="resume.html">Resume</a></li>
-				</ul>
-			</div>
 
+			<?php include "partials/navbar.html" ?>
+			
 			<div class="main-body">
 				<div class="main-body-sidebar">
 					I am a sidebar and I can have lots of coolio content
@@ -57,7 +53,7 @@
 						<li>Quatro</li>
 					</ol>
 
-					<a href="electricboogaloo.html">Click to go to a second page</a>
+					<a href="info.php">Click to go to a second page</a>
 				</div>
 			</div>
 			<div class="main-footer material">

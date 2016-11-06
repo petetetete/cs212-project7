@@ -1,0 +1,20 @@
+<div class="main-header material">
+	<ul>
+		<li><a href="index.php">Home</a></li>
+		<li><a href="info.php">Info</a></li>
+		<li><a href="form.php">Form</a></li>
+		<li><a href="resume.php">Resume</a></li>
+		<li><a href="#" onclick="logout()">Logout</a></li>
+	</ul>
+</div>
+
+<script>
+	function logout() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = () => {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) window.location.href = "login.html";
+		}
+		xmlhttp.open("GET", "php/logout.php", true);
+		xmlhttp.send();
+	}
+</script>

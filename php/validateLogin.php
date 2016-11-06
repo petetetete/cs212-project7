@@ -13,17 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$result = $mysqli->query("SELECT * FROM users WHERE username='$username'") or die($mysqli->error);
 	$array = $result->fetch_assoc();
 	if (!is_null($array["password"])) $dbPassword = $array["password"];
+	if (!is_null($array["active"])) $userActive = $array["active"];
 
-	if ($result->num_rows > 0 && $password == $dbPassword) {
+	if ($result->num_rows > 0 && $password == $dbPassword && $userActive == 1) {
 
 		session_start();
 		$_SESSION["username"] = $username;
 		$_SESSION["password"] = $password;
 
 		logActivity($mysqli, $username, "User login");
-		echo "Valid login";
+		header("Location: ../index.php");
 	}
 	else {
+		logActivity($mysqli, "ADMIN", "Invalid login attempt: (U: ".$username.", P: ".$password.")");
 		echo "Invalid login";
 	}
 }

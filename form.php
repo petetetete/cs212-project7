@@ -1,4 +1,6 @@
 <?php
+	include "php/bounceCheck.php";
+
 	// Array of form elements so inputs can easily be added later
 	//  - label: Placeholder for the input
 	//  - value: Value of the input, can be defaulted by initializing a value in the array
@@ -138,14 +140,8 @@
 	</head>
 	<body>
 		<div class="main-container">
-			<div class="main-header material">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="electricboogaloo.html">Info</a></li>
-					<li><a href="form.php">Form</a></li>
-					<li><a href="resume.html">Resume</a></li>
-				</ul>
-			</div>
+
+			<?php include "partials/navbar.html" ?>
 
 			<div class="main-body">
 				<div class="main-body-sidebar">
