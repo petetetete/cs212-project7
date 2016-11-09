@@ -205,6 +205,10 @@ body {
 }
 
 @media (max-width: 768px) {
+	.main-container {
+		width: 93%;
+		margin-top: 10px;
+	}
 	.main-header ul:after {
 		content: "";
 		position: absolute;
