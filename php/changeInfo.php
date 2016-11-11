@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	if ($newPassword) {
 
 		// Update entry in database and local variable
-		$mysqli->query("UPDATE users SET password='$newPassword' WHERE username='".$_SESSION['username']."'") or die($mysqli->error);
+		$mysqli->query("UPDATE users SET password='$newPassword' WHERE username='".$_SESSION['username']."'");
 		$_SESSION["password"] = $_POST["newPassword"];
 
 		// Log the fact that they changed password and redirect back to info

@@ -42,7 +42,6 @@ body {
 .main-container {
 	width: 90%;
 	margin: 15px auto 0 auto;
-	max-width: 1200px;
 }
 
 .main-header {
@@ -108,14 +107,10 @@ body {
 .main-body a {
 	text-decoration: none;
 	color: inherit;
-	background-color: rgba(224, 224, 224, 0.25);
-	padding: 3px;
 }
 
 .main-body a:hover {
 	color: #212121;
-	background-color: rgba(224, 224, 224, .5);
-	border-bottom: 2px solid rgba(189, 189, 189, .6);
 }
 
 .main-body input:not([type=radio]):not([type=checkbox]),
@@ -128,11 +123,16 @@ body {
 	border-radius: .25rem;
 	padding: .4rem .6rem;
 	margin-bottom: 5px;
+	resize: vertical;
+	outline: none;
+	transition: box-shadow .2s;
+	color: #424242;
 
 	box-sizing: border-box;
 }
 .main-body input:focus, .main-body textarea:focus {
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+	box-shadow: 0 2px 7px 0px rgba(0,0,0,.2);
+    border: 1px solid rgba(0,0,0,.35) !important;
 }
 .main-body button {
 	padding: 5px;
@@ -207,7 +207,7 @@ body {
 @media (max-width: 768px) {
 	.main-container {
 		width: 93%;
-		margin-top: 10px;
+		margin-top: 7px;
 	}
 	.main-header ul:after {
 		content: "";
@@ -223,11 +223,23 @@ body {
 	.main-header li:last-child {
 		border-right: none;
 	}
+	.main-body {
+		margin: 0 1px;
+	}
+	.main-body input:not([type=radio]):not([type=checkbox]),
+	.main-body textarea, .main-body select {
+		max-width: none;
+	}
+	.main-body button {
+		width: 100%;
+	}
 	.main-body-sidebar {
 		width: 100%;
+		padding: 15px;
 		border-bottom: 1px dashed #BDBDBD;
 	}
 	.main-body-content {
+		padding: 10px;
 		border-left: none;
 	}
 	.fixed-notification {

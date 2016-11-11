@@ -6,9 +6,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include "partials/head.html" ?>
 		<link rel="stylesheet" type="text/css" href="css/forum.css" />
-		<title>Info - CS212</title>
+		<?php include "partials/head.html" ?>
+		<title>Forum - CS212</title>
 	</head>
 	<body>
 		<div class="main-container">
@@ -26,16 +26,22 @@
 							// Display table of activity log data
 							$results = $mysqli->query("SELECT * FROM threads") or die($mysqli->error);
 							while($result = $results->fetch_assoc()) {
-								echo "<div class='thread-post clearfix'>";
+								echo "<a href='thread.php?id=".$result["thread_id"]."' class='thread-post clearfix'>";
 								echo 	"<div class='thread-info'>";
 								echo 		"<div class='thread-info-line'>".$result["time"]."</div>";
-								echo 		"<div class='thread-info-line'>".$result["username"]."</div>";
+								echo 		"<div class='thread-info-line'>(id:".$result["thread_id"].") ".$result["username"]."</div>";
 								echo 	"</div>";
-								echo 	"<div class='thread-name'>".$result["thread_id"].". ".$result["name"]."</div>";
-								echo "</div>";
+								echo 	"<div class='thread-name'>".$result["name"]."</div>";
+								echo "</a>";
 							}
 						?>
 					</div>
+					<h2 class="blue-img">Create New Thread</h2>
+					<form action="php/createThread.php" method="post">
+						<?php if(isset($_GET["fError"])) echo "<div class='error-message'>".$_GET["fError"]."</div>"; ?>
+						<input type="text" name="threadName" placeholder="Thread name" />
+						<button type="submit">Submit</button>
+					</form>
 				</div>
 			</div>
 			<div class="main-footer material">

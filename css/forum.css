@@ -6,6 +6,7 @@
 	height: 50px;
 	border: 1px dashed #BDBDBD;
 	overflow: hidden;
+	display: block;
 	
 	color: #424242;
 	background-color: #F5F5F5;
@@ -60,4 +61,105 @@
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+}
+
+.thread-container {
+	width: 100%;
+}
+
+.post-post {
+	position: relative;
+	border: 1px dashed #BDBDBD;
+	overflow: hidden;
+	display: block;
+	
+	color: #424242;
+	background-color: #F5F5F5;
+}
+.post-post:not(:first-child) {
+	border-top: none;
+}
+.post-post:first-child {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.post-post:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.post-info {
+	position: absolute;
+	top: 0; left: 0;
+	box-sizing: border-box;
+	padding: 8px 10px;
+	width: 200px;
+	height: 100%;
+	border-right: 1px dashed #BDBDBD;
+	background-color: #EEEEEE;
+}
+
+.post-message {
+	box-sizing: border-box;
+	padding: 15px;
+	width: auto;
+	margin-left: 200px;
+	height: 100%;
+}
+
+.post-edit {
+	position: absolute;
+	top: 2px; right: 5px;
+	font-size: 0.8em;
+}
+.post-edit input[type=checkbox] {
+	vertical-align: middle;
+}
+.post-edit label {
+	vertical-align: middle;
+}
+
+
+.post-message-edit {
+	display: none !important;
+}
+.post-post:hover .post-message-edit, .post-message-edit:focus {
+	display: block !important;
+}
+.post-post:hover .post-message-edit + .post-message-text, .post-message-edit:focus + .post-message-text {
+	display: none !important;
+}
+.post-message-edit textarea {
+	max-width: none !important;
+}
+
+.post-info-line {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.small-text {
+	font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+	.thread-info {
+		width: 100px;
+	}
+	.post-post {
+		margin-top: 5px;
+		border: 1px dashed #BDBDBD !important;
+		border-radius: 5px !important;
+	}
+	.post-info {
+		position: relative;
+		width: 100%;
+		height: auto;
+		border-bottom: 1px dashed #BDBDBD;
+		border-right: none;
+	}
+	.post-message {
+		margin-left: 0;
+	}
 }

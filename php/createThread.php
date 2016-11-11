@@ -22,14 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		// Log that the thread was created
 		logActivity($mysqli, $username, "Created thread: $threadName");
 
-		//header("Location: ../index.php");
+		// Redirect back to the forum page
+		header("Location: ../forum.php");
 	}
 	else {
 		logActivity($mysqli, $username, "Tried to create thread with no name");
 
 		// Redirect back to login page with the error
-		//$errorMessage = "Fields cannot be empty";
-		//header("Location: ../login.php?rError=$errorMessage");
+		$errorMessage = "Field cannot be empty";
+		header("Location: ../forum.php?fError=$errorMessage");
 	}
 }
 else {
