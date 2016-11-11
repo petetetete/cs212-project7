@@ -17,7 +17,7 @@
 
 			<div class="main-body">
 				<div class="main-body-sidebar">
-					Welcome to the site forum! Feel free to create a thread, post in an existing thread, and participate in conversation!
+					Welcome to the best placeholder discussion board you've ever seen. Lorem ipsum, meet foo bar. Oh, TEST4, what a jokester you are.
 				</div>
 				<div class="main-body-content">
 					<h2 class="magenta-img">Threads</h2>

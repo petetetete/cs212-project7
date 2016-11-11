@@ -39,15 +39,15 @@
 								echo "<div class='post-post clearfix'>";
 								echo 	"<div class='post-info'>";
 								echo 		"<div class='post-info-line'>User: ".$result["username"]."</div>";
-								echo 		"<div class='post-info-line small-text'>Posted: ".$result["time"]."</div>";
+								echo 		"<div class='post-info-line small-text'><span class='mobile-hide'>Posted: </span>".$result["time"]."</div>";
 								echo 	"</div>";
 								echo 	"<div class='post-message'>";
-								echo 		"<div class='post-edit'><input type='checkbox' /><label>edit</label></div>";
 								if ($result["username"] == $_SESSION["username"]) {
+									echo 	"<input type='checkbox' class='post-edit' />";
 									echo 	"<form class='post-message-edit' action='php/updateMessage.php' method='post'>";
 									echo 		"<input type='hidden' name='threadID' value='$threadID' />";
 									echo 		"<input type='hidden' name='postID' value='".$result["post_id"]."' />";
-									echo 		"<textarea rows='9' name='message'>".$result["message"]."</textarea>";
+									echo 		"<textarea rows='5' name='message'>".$result["message"]."</textarea>";
 									echo 		"<button type='submit'>Edit Message</button>";
 									echo 	"</form>";
 								}

@@ -133,7 +133,7 @@
 <html>
 	<head>
 		<?php include "partials/head.html" ?>
-		<title>Form - CS212</title>
+		<title>Feedback - CS212</title>
 	</head>
 	<body>
 		<div class="main-container">
@@ -142,13 +142,13 @@
 
 			<div class="main-body">
 				<div class="main-body-sidebar">
-					I am an example form page!
+					Poor, broke college student will work for 2 cents.
 				</div>
 				<div class="main-body-content">
-					<h2 class="partay-img">Form</h2>
+					<h2 class="partay-img">Feedback Form</h2>
 					<div class="form-container">
 
-						<!-- Itereate through the data array and render the form -->
+						<!-- Iterate through the data array and render the form -->
 						<?php 
 							echo '<form method="POST" action="', htmlspecialchars($_SERVER["PHP_SELF"]), '">';
 

@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 		// Log that the thread was created
 		logActivity($mysqli, $username, "Posted in thread ($threadID)");
-
 		header("Location: ../thread.php?id=$threadID");
 	}
 	else {

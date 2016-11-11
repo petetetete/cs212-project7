@@ -16,7 +16,7 @@
 
 			<div class="main-body">
 				<div class="main-body-sidebar">
-					On this page you can view and edit some of your account settings
+					View and edit some of your account settings. Want to change your password? We got that. Want to delete your account off the face of the Earth? We got that too.
 				</div>
 				<div class="main-body-content">
 					<h2 class="partay-img">Change Password</h2>
@@ -55,9 +55,6 @@
 			<div class="main-footer material">
 				ph289@nau.edu
 			</div>
-		</div>
-		<div class="fixed-notification material">
-			Just regular news!
 		</div>
 	</body>
 </html>

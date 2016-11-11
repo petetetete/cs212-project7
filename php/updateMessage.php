@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$threadID = $mysqli->real_escape_string($_POST["threadID"]);
 	$postID = $mysqli->real_escape_string($_POST["postID"]);
 	$message = $mysqli->real_escape_string($_POST["message"]);
+	$username = $_SESSION["username"];
 	
 	// Check if user entered a message
 	if ($message) {
@@ -22,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 		// Log that the post was updated
 		logActivity($mysqli, $username, "Updated post ($postID) in thread ($threadID)");
-
 		header("Location: ../thread.php?id=$threadID");
 	}
 	else {
@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 		// Log that the post was deleted
 		logActivity($mysqli, $username, "Deleted post ($postID) in thread ($threadID)");
-
 		header("Location: ../thread.php?id=$threadID");
 	}
 }

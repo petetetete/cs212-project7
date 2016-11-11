@@ -1,3 +1,7 @@
+* {
+	transition: background-color .15s;
+}
+
 body {
 	margin: 0;
 }
@@ -78,7 +82,6 @@ body {
 	color: #424242;
 }
 
-
 .main-header li:hover {
 	color: #212121;
 	background-color: #EEEEEE;
@@ -121,7 +124,7 @@ body {
 	max-width: 300px;
 	border: 1px solid rgba(0,0,0,.25);
 	border-radius: .25rem;
-	padding: .4rem .6rem;
+	padding: .4rem;
 	margin-bottom: 5px;
 	resize: vertical;
 	outline: none;
@@ -204,10 +207,18 @@ body {
 	box-sizing: border-box;
 }
 
+/* Helper classes */
+.small-text {
+	font-size: 0.8em;
+}
+.mobile-hide {
+	display: none;
+}
+
+
 @media (max-width: 768px) {
 	.main-container {
-		width: 93%;
-		margin-top: 7px;
+		margin-top: 10px;
 	}
 	.main-header ul:after {
 		content: "";
@@ -224,7 +235,7 @@ body {
 		border-right: none;
 	}
 	.main-body {
-		margin: 0 1px;
+		margin: 0 2px;
 	}
 	.main-body input:not([type=radio]):not([type=checkbox]),
 	.main-body textarea, .main-body select {

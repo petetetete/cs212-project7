@@ -13,7 +13,7 @@
 			
 			<div class="main-body">
 				<div class="main-body-sidebar">
-					Welcome to a website!
+					Welcome to a website! This website features website things such as text and links. Some pages are also spiced up with the occasional div or table.
 				</div>
 				<div class="main-body-content">
 					<h2 class="partay-img">I am the most important lorem ipsum</h1>
@@ -56,9 +56,6 @@
 			<div class="main-footer material">
 				ph289@nau.edu
 			</div>
-		</div>
-		<div class="fixed-notification material">
-			Breaking news!
 		</div>
 	</body>
 </html>

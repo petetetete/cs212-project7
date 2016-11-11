@@ -13,7 +13,7 @@
 			</div>
 			<div class="main-body">
 				<div class="main-body-sidebar">
-					Welcome!
+					Greetings adventurer, this is about as good as the site gets so don't bother logging in.
 				</div>
 				<div class="main-body-content">
 					<h3>Login</h3>

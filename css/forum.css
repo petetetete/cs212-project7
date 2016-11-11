@@ -92,7 +92,7 @@
 	position: absolute;
 	top: 0; left: 0;
 	box-sizing: border-box;
-	padding: 8px 10px;
+	padding: 15px;
 	width: 200px;
 	height: 100%;
 	border-right: 1px dashed #BDBDBD;
@@ -100,8 +100,9 @@
 }
 
 .post-message {
+	position: relative;
 	box-sizing: border-box;
-	padding: 15px;
+	padding: 25px;
 	width: auto;
 	margin-left: 200px;
 	height: 100%;
@@ -109,24 +110,25 @@
 
 .post-edit {
 	position: absolute;
-	top: 2px; right: 5px;
+	top: 4px; right: 75px;
 	font-size: 0.8em;
+	box-shadow: none !important;
 }
-.post-edit input[type=checkbox] {
-	vertical-align: middle;
+.post-edit:after {
+	content: "edit mode?";
+    position: absolute;
+    left: 17px; bottom: 0px;
+    color: #424242;
+    white-space: nowrap;
 }
-.post-edit label {
-	vertical-align: middle;
-}
-
-
-.post-message-edit {
-	display: none !important;
-}
-.post-post:hover .post-message-edit, .post-message-edit:focus {
+.post-edit:checked ~ .post-message-edit {
 	display: block !important;
 }
-.post-post:hover .post-message-edit + .post-message-text, .post-message-edit:focus + .post-message-text {
+.post-edit:checked ~ .post-message-text {
+	display: none !important;
+}
+
+.post-message-edit {
 	display: none !important;
 }
 .post-message-edit textarea {
@@ -137,11 +139,9 @@
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	margin-bottom: 5px;
 }
 
-.small-text {
-	font-size: 0.8em;
-}
 
 @media (max-width: 768px) {
 	.thread-info {
@@ -155,11 +155,20 @@
 	.post-info {
 		position: relative;
 		width: 100%;
+		padding: 10px;
 		height: auto;
 		border-bottom: 1px dashed #BDBDBD;
 		border-right: none;
 	}
+	.post-info-line:last-child {
+		margin-bottom: 0;
+		padding-right: 50px;
+	}
 	.post-message {
 		margin-left: 0;
+		padding: 10px;
+	}
+	.post-edit {
+		top: -28px; right: 72px;
 	}
 }
