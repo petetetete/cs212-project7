@@ -21,7 +21,6 @@
 				<div class="main-body-content">
 					<h2 class="partay-img">Change Password</h2>
 					<form action="php/changeInfo.php" method="post">
-						<?php if(isset($_GET["cpError"])) echo "<div class='error-message'>".$_GET["cpError"]."</div>"; ?>
 						<input type="text" placeholder="New password" name="newPassword" />
 						<button type="submit">Submit</button>
 					</form>
@@ -56,5 +55,7 @@
 				ph289@nau.edu
 			</div>
 		</div>
+
+		<script type="text/javascript" src="js/validate.js"></script>
 	</body>
 </html>

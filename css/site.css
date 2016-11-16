@@ -1,5 +1,7 @@
 * {
 	transition: background-color .15s;
+	transition: border-color .15s;
+	transition: box-shadow .2s;
 }
 
 body {
@@ -128,7 +130,6 @@ body {
 	margin-bottom: 5px;
 	resize: vertical;
 	outline: none;
-	transition: box-shadow .2s;
 	color: #424242;
 
 	box-sizing: border-box;
@@ -139,6 +140,14 @@ body {
 }
 .main-body button {
 	padding: 5px;
+}
+
+input[data-error="true"], 
+textarea[data-error="true"],
+select[data-error="true"] {
+	border-color: #F44336 !important;
+	background-color: #FFEBEE !important;
+	color: #424242;
 }
 
 .any-error-message {

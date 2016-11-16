@@ -59,9 +59,8 @@
 					</div>
 					<h2 class="blue-img">Create New Post</h2>
 					<form action="php/postMessage.php" method="post">
-						<?php if(isset($_GET["pError"])) echo "<div class='error-message'>".$_GET["pError"]."</div>"; ?>
 						<input type="hidden" name="threadID" value="<?php echo $threadID ?>" />
-						<textarea name="message" rows="5" placeholder="Enter your post... (1000 character limit)"></textarea>
+						<textarea name="message" rows="5" data-validate="true" placeholder="Enter your post... (1000 character limit)"></textarea>
 						<button type="submit">Submit</button>
 					</form>
 				</div>
@@ -70,5 +69,7 @@
 				ph289@nau.edu
 			</div>
 		</div>
+
+		<script type="text/javascript" src="js/validate.js"></script>
 	</body>
 </html>

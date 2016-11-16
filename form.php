@@ -19,14 +19,14 @@
 			"value" => "",
 			"error" => "",
 			"type" => "input",
-			"check" => array("blank", "email")
+			"check" => array("email")
 		),
 		"subject" => array(
 			"label" => "Subject",
 			"value" => "",
 			"error" => "",
 			"type" => "input",
-			"check" => array("blank")
+			"check" => array()
 		),
 		"category" => array(
 			"label" => "Enter your feedback reason",
@@ -34,14 +34,14 @@
 			"error" => "",
 			"type" => "select",
 			"options" => array("Complaint", "Question", "Suggestion", "Praise", "Other"),
-			"check" => array("blank")
+			"check" => array()
 		),
 		"message" => array(
 			"label" => "Enter your message",
 			"value" => "",
 			"error" => "",
 			"type" => "textarea",
-			"check" => array("blank")
+			"check" => array()
 		)
 	);
 	$toEmail = "ph289@nau.edu"; // The email to be sent to
@@ -58,16 +58,8 @@
 			$errorFound = false;
 			foreach ($info["check"] as $check) {
 
-				// Check for blank error
-				if ($check == "blank" && empty($_POST[$field])) {
-					$data[$field]["error"] = "Field is blank";
-					$anyErrorFound = true;
-					$errorFound = true;
-					break;
-				}
-
 				// Check for invalid email address
-				else if ($check == "email") {
+				if ($check == "email") {
 
 					if ($_POST[$field] && filter_var($_POST[$field], FILTER_VALIDATE_EMAIL)) {
 						$allowedDomains = array("com", "org", "edu", "gov");
@@ -188,5 +180,7 @@
 				ph289@nau.edu
 			</div>
 		</div>
+
+		<script type="text/javascript" src="js/validate.js"></script>
 	</body>
 </html>

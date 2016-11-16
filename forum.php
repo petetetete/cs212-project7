@@ -38,8 +38,7 @@
 					</div>
 					<h2 class="blue-img">Create New Thread</h2>
 					<form action="php/createThread.php" method="post">
-						<?php if(isset($_GET["fError"])) echo "<div class='error-message'>".$_GET["fError"]."</div>"; ?>
-						<input type="text" name="threadName" placeholder="Thread name" />
+						<input type="text" name="threadName" data-validate="true" placeholder="Thread name" />
 						<button type="submit">Submit</button>
 					</form>
 				</div>
@@ -48,5 +47,7 @@
 				ph289@nau.edu
 			</div>
 		</div>
+
+		<script type="text/javascript" src="js/validate.js"></script>
 	</body>
 </html>
