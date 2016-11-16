@@ -37,5 +37,7 @@
 				ph289@nau.edu
 			</div>
 		</div>
+
+		<script type="text/javascript" src="js/validate.js"></script>
 	</body>
 </html>

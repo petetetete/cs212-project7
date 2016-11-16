@@ -18,14 +18,17 @@ forms.forEach((form) => {
 	// For each input
 	inputs.forEach((input, position) => {
 
+		let prevPlaceholder = input.placeholder;
+
 		// When an input is 'blurred', or left, check if it is empty and add a data attribute if so
 		input.onblur = (e) => {
 			if (e.target.value == "") {
-				if (e.target.nodeName != "SELECT") e.target.value = EMPTY_MESAGE; // Set input value to error message
+				e.target.placeholder = `${prevPlaceholder} (${EMPTY_MESAGE})`; // Set placeholder to error message
 				errors[position] = true; // Add key-value to errors object
 				e.target.dataset.error = "true";
 			}
 			else {
+				e.target.placeholder = prevPlaceholder; // Remove error message
 				delete errors[position]; // Remove error from errors object
 				e.target.removeAttribute("data-error");
 			}
@@ -34,7 +37,7 @@ forms.forEach((form) => {
 		// When a user enters an input, temporarily remove the error, give them the benefit of the doubt ;)
 		input.onfocus = (e) => {
 			if (errors[position]) {
-				e.target.value = ""; // Remove error message
+				e.target.placeholder = prevPlaceholder; // Remove error message
 				delete errors[position]; // Remove error from errors object
 				e.target.removeAttribute("data-error");
 			}

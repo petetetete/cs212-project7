@@ -147,6 +147,11 @@ textarea[data-error="true"],
 select[data-error="true"] {
 	border-color: #F44336 !important;
 	background-color: #FFEBEE !important;
+}
+
+input[data-error="true"]::-webkit-input-placeholder, 
+textarea[data-error="true"]::-webkit-input-placeholder,
+select[data-error="true"]::-webkit-input-placeholder {
 	color: #424242;
 }
 
